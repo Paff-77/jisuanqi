@@ -164,7 +164,7 @@ const html = `
   <script>
   document.getElementById('valueCalculator').addEventListener('submit', async function(event) {
     event.preventDefault();
-    
+
     const initialValue = parseFloat(document.getElementById('initialValue').value);
     const currency = document.getElementById('currency').value;
     const paymentPeriod = document.getElementById('paymentPeriod').value;
@@ -175,12 +175,10 @@ const html = `
     const paymentFrequency = calculatePaymentFrequency(paymentPeriod);
     const remainingValue = calculateRemainingValue(initialValue, remainingDays, paymentFrequency);
     
-    // 将结果添加到现有的元素中
     const resultElement = document.getElementById('remainingValue');
     resultElement.innerHTML = '<p class="label">剩余价值：' + remainingValue.toFixed(2) + ' ' + currency + '</p>';
     document.getElementById('result').style.display = 'block';
   });
-
 
     function calculatePaymentFrequency(paymentPeriod) {
       let frequencyInDays;
@@ -219,8 +217,6 @@ const html = `
   </script>
 </body>
 </html>
-
-
 `;
 
 async function handleRequest(request) {
